@@ -1,3 +1,3 @@
-# Getting Started with Create React App
+# Super Potato
 
 https://freefrontend.com/css-dashboards/
