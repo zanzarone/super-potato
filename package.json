@@ -12,10 +12,11 @@
     "sass": "^1.68.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3006 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev-server": "json-server --watch ./data/db.json --port 3500"
   },
   "eslintConfig": {
     "extends": [
