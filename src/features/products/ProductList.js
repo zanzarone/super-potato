@@ -1,112 +1,195 @@
 import React, { useState } from "react";
 import {
-  selectAllProducts,
-  selectProductIds,
-  useGetProductsQuery,
+    selectAllProducts,
+    selectProductIds,
+    useGetProductsQuery,
 } from "./productsSlice";
 import { useSelector } from "react-redux";
 import style from "./ProductList.module.scss";
+import {
+    MagnifyingGlass,
+    Horse,
+    Plus,
+    Binoculars,
+    Trash,
+    PencilSimpleLine,
+    AndroidLogo,
+} from "@phosphor-icons/react";
 import logo from "../../assets/img/logo.png";
 
 const ProductList = () => {
-  const productsIds = useSelector(selectAllProducts);
+    const productsIds = useSelector(selectAllProducts);
 
-  const [title, setTitle] = useState("");
+    const { isLoading, isSuccess, isError, error } = useGetProductsQuery();
 
-  const onTitleChanged = (e) => setTitle(e.target.value);
-
-  const { isLoading, isSuccess, isError, error } = useGetProductsQuery();
-
-  let content;
-  if (isLoading) {
-    content = <p>"Loading..."</p>;
-  } else if (isSuccess) {
-    content = (
-      <main className={style.main}>
-        <header>
-          <div className={style.responsiveWrapper}>
-            <img src={logo} /> <span className={style.logoName}>Frontend</span>
-          </div>
-        </header>
-        {/* <div className={style.content}> */}
-        <div className={style.responsiveWrapper}>
-          <div className={style.subHeader}>
-            <h2>Products</h2>
-            <div className={style.search}>
-              <input type="text" placeholder="Search" />
-              <button type="submit">
-                <i class="ph-magnifying-glass-bold"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* <div className={style.responsiveWrapper}> */}
-        <div
-          style={{ display: "flex", paddingTop: "2rem", paddingBottom: "2rem" }}
-        >
-          <div className="content-panel">
-            <div className="vertical-tabs">
-              <a href="#" class="active">
-                View all
-              </a>
-              <a href="#">Developer tools</a>
-              {/* <a href="#">Communication</a>
-              <a href="#">Productivity</a>
-              <a href="#">Browser tools</a>
-              <a href="#">Marketplace</a> */}
-            </div>
-          </div>
-          <div class="card-grid">
-            {productsIds.map((p) => {
-              return (
-                <article class="card">
-                  <div class="card-header">
-                    <div>
-                      <span>
-                        <img src="https://assets.codepen.io/285131/zeplin.svg" />
-                      </span>
-                      <h3>{p?.name}</h3>
+    let content;
+    if (isLoading) {
+        content = <p>"Loading..."</p>;
+    } else if (isSuccess) {
+        content = (
+            <main className={style.main}>
+                <header>
+                    <div
+                        className={`${style.responsiveWrapper} ${style.headerContent}`}
+                    >
+                        <img src={logo} />
+                        <span className={style.logoName}>Frontend</span>
                     </div>
-                    <label class="toggle">
-                      <input type="checkbox" checked />
-                      <span></span>
-                    </label>
-                  </div>
-                  <div class="card-body">
-                    <tbody>
-                      <tr>
-                        <td style={{ fontSize: "small" }}>Descr:</td>
-                        <td style={{ fontSize: "small" }}>{p?.description}</td>
-                      </tr>
-                      <tr>
-                        <td style={{ fontSize: "small" }}>Value:</td>
-                        <td style={{ fontSize: "small" }}>{p?.value}</td>
-                      </tr>
-                      <tr>
-                        <td style={{ fontSize: "small" }}>Created:</td>
-                        <td style={{ fontSize: "small" }}>{p?.createdAt}</td>
-                      </tr>
-                      <tr>
-                        <td style={{ fontSize: "small" }}>Updated:</td>
-                        <td style={{ fontSize: "small" }}>{p?.updatedAt}</td>
-                      </tr>
-                    </tbody>
-                    {/* <p>{p?.description}</p> */}
-                  </div>
-                  {/* <p>Value:{p?.value}</p> */}
-                </article>
-              );
-            })}
-            {/* </div> */}
-          </div>
-        </div>
-      </main>
-    );
-  } else if (isError) {
-    content = <p>{error}</p>;
-  }
+                </header>
+                <div className={style.responsiveWrapper}>
+                    <div className={style.subHeader}>
+                        <h2>Products</h2>
+                        <div className={style.search}>
+                            <input type="text" placeholder="Search" />
+                            <button type="submit">
+                                <MagnifyingGlass />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${style.responsiveWrapper} ${style.content}`}>
+                    <div
+                        className="content-panel"
+                        style={{
+                            // backgroundColor: "lightcyan",
+                            display: "flex",
+                            alignItems: "center",
+                        }}
+                    >
+                        <div className="vertical-tabs">
+                            <a
+                                href="#"
+                                className="active"
+                                style={{
+                                    // backgroundColor: "pink",
+                                    gap: "0.3rem",
+                                }}
+                            >
+                                <Binoculars /> View all
+                            </a>
+                            <a
+                                href="#"
+                                style={{
+                                    // backgroundColor: "pink",
+                                    gap: "0.3rem",
+                                }}
+                            >
+                                <Plus /> Add product
+                            </a>
+                        </div>
+                    </div>
+                    <div className="card-grid">
+                        {productsIds.map((p) => {
+                            return (
+                                <article className="card">
+                                    <div className="card-header">
+                                        <div>
+                                            <span>
+                                                <AndroidLogo size={32} />
+                                            </span>
+                                            <h3>{p?.name}</h3>
+                                        </div>
+                                        {/* <label className="toggle">
+                                            <input type="checkbox" checked />
+                                            <span></span>
+                                        </label> */}
+                                    </div>
+                                    <div className="card-body">
+                                        <tbody>
+                                            <tr>
+                                                <td
+                                                    style={{
+                                                        fontSize: "small",
+                                                        fontWeight: "bold",
+                                                    }}
+                                                >
+                                                    Descr:
+                                                </td>
+                                                <td
+                                                    style={{
+                                                        fontSize: "small",
+                                                    }}
+                                                >
+                                                    {p?.description}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style={{
+                                                        fontSize: "small",
+                                                        fontWeight: "bold",
+                                                    }}
+                                                >
+                                                    Value:
+                                                </td>
+                                                <td
+                                                    style={{
+                                                        fontSize: "small",
+                                                    }}
+                                                >
+                                                    {p?.value}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style={{
+                                                        fontSize: "small",
+                                                        fontWeight: "bold",
+                                                    }}
+                                                >
+                                                    Created:
+                                                </td>
+                                                <td
+                                                    style={{
+                                                        fontSize: "small",
+                                                    }}
+                                                >
+                                                    {p?.createdAt}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style={{
+                                                        fontSize: "small",
+                                                        fontWeight: "bold",
+                                                    }}
+                                                >
+                                                    Updated:
+                                                </td>
+                                                <td
+                                                    style={{
+                                                        fontSize: "small",
+                                                    }}
+                                                >
+                                                    {p?.updatedAt}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </div>
+                                    <div className="card-footer">
+                                        <a href="#" className="icon-button">
+                                            <Trash size={22} color="crimson" />
+                                        </a>
+                                        <a href="#" className="icon-button">
+                                            <PencilSimpleLine
+                                                size={22}
+                                                color="royalBlue"
+                                            />
+                                        </a>
+                                    </div>
+                                </article>
+                            );
+                        })}
+                        {/* </div> */}
+                    </div>
+                </div>
+            </main>
+        );
+    } else if (isError) {
+        content = <p>{error}</p>;
+    }
 
-  return content;
+    return content;
 };
 
 export default ProductList;
