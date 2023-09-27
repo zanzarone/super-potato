@@ -53,7 +53,6 @@ const Products = () => {
     if (!b?.updatedAt || !a?.updatedAt) return 0;
     const aDate = parseISO(a.updatedAt);
     const bDate = parseISO(b.updatedAt);
-    console.log(aDate, bDate);
     return compareAsc(bDate, aDate);
   });
 
@@ -65,7 +64,6 @@ const Products = () => {
   }, [products]);
 
   const handleChangeTab = (e) => {
-    console.log(e);
     if (e?.target?.id) {
       setTab(e?.target?.id);
     }

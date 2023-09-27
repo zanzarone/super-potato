@@ -8,7 +8,6 @@ const productsAdapter = createEntityAdapter({
     if (!b?.updatedAt || !a?.updatedAt) return 0;
     const aDate = parseISO(a.updatedAt);
     const bDate = parseISO(b.updatedAt);
-    console.log(aDate, bDate);
     return compareAsc(aDate, bDate);
   },
 });
@@ -60,15 +59,21 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     //# PUT - aggiornare tutto il record del prodotto - /products/${initialProd.id}
     updateProduct: builder.mutation({
-      query: (initialProd) => ({
-        url: `/products/${initialProd.id}`,
-        method: "PUT",
-        body: {
-          ...initialProd,
-          //? solo per ora, dopo la post VERA non ha bisogno di avere id settato!
-          updatedAt: new Date().toISOString(),
-        },
-      }),
+      query: (initialProd) => {
+        console.log(
+          "PUT - aggiornare tutto il record del prodotto -",
+          initialProd
+        );
+        return {
+          url: `/products/${initialProd.id}`,
+          method: "PUT",
+          body: {
+            ...initialProd,
+            //? solo per ora, dopo la post VERA non ha bisogno di avere id settato!
+            updatedAt: new Date().toISOString(),
+          },
+        };
+      },
       invalidatesTags: (result, error, arg) => [
         { type: "Product", id: arg.id },
       ],

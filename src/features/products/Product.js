@@ -20,6 +20,7 @@ const Product = ({
   onAdd,
   onFinished,
   onCanceled,
+  clearDataOnLeave = true,
 }) => {
   const [name, setName] = useState(initName);
   const [value, setValue] = useState(initValue);
@@ -34,7 +35,6 @@ const Product = ({
   const onNameChanged = (e) => setName(e.target.value);
   const onValueChanged = (e) => setValue(e.target.value);
   const onStatusChanged = (e) => {
-    console.log("pippo", e.target.value);
     setStatus(Number(e.target.value));
   };
   const onDescriptionChanged = (e) => setDescription(e.target.value);
@@ -59,17 +59,19 @@ const Product = ({
       setTimeout(() => setError(), 3000);
       return;
     }
-    setName("");
-    setValue("");
-    setStatus("");
-    setDescription("");
-    setStoreId("");
-    setPlatform("");
+    if (clearDataOnLeave) {
+      setName("");
+      setValue("");
+      setStatus("");
+      setDescription("");
+      setStoreId("");
+      setPlatform("");
+    }
     setSuccess("Hooray! Product added");
     setTimeout(() => {
       setSuccess();
       onFinished();
-    }, 3500);
+    }, 2000);
   };
 
   const onCanceledClicked = () => {

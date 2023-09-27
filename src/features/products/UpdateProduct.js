@@ -41,6 +41,11 @@ const UpdateProduct = ({ onFinished, productId }) => {
         description,
         storeId,
         platforms: [platform],
+        //
+        id: productId,
+        _id: product._id,
+        createdAt: product.createdAt,
+        security: product.security,
       }).unwrap();
     } catch (err) {
       return { error: err.message };
@@ -64,17 +69,9 @@ const UpdateProduct = ({ onFinished, productId }) => {
         onAdd={handleOnAdd}
         onFinished={handleOnFinished}
         onCanceled={handleOnCanceled}
+        clearDataOnLeave={false}
       />
     );
-
-  // return (
-  //   <Product
-  //     isLoading={isLoading}
-  //     onAdd={handleOnAdd}
-  //     onFinished={handleOnFinished}
-  //     onCanceled={handleOnCanceled}
-  //   />
-  // );
 
   return <div>{productId}</div>;
 };
