@@ -3,22 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { store } from "./store";
-// import { Provider } from "react-redux";
-import { ApiProvider } from "@reduxjs/toolkit/query/react";
-import { apiSlice } from "./features/api/apiSlice";
+import { store } from "./store";
+import { Provider } from "react-redux";
+import { productsApiSlice } from "./features/products/productsSlice";
+store.dispatch(productsApiSlice.endpoints.getProducts.initiate());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    <ApiProvider api={apiSlice}>
+    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<App />} />
         </Routes>
       </BrowserRouter>
-    </ApiProvider>
-    {/* </Provider> */}
+    </Provider>
   </React.StrictMode>
 );

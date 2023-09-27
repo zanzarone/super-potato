@@ -1,9 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-// import Login from "./components/Login";
 import useTitle from "./hooks/useTitle";
-import ProductList from "./features/products/ProductList";
+import Products from "./features/products/Products";
 
 function App() {
   useTitle("Frontend");
@@ -12,8 +11,11 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* //# public routes */}
-        <Route index element={<ProductList />} />
-        <Route path="products"></Route>
+        <Route path="products">
+          <Route index element={<Products />} />
+          {/* <Route index element={<AddPostForm />} />
+          <Route path=":postId" element={<SinglePostPage />} /> */}
+        </Route>
       </Route>
     </Routes>
   );

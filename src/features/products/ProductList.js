@@ -1,198 +1,123 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import style from "./Products.module.scss";
 import {
-    selectAllProducts,
-    selectProductIds,
-    useGetProductsQuery,
-} from "./productsSlice";
-import { useSelector } from "react-redux";
-import style from "./ProductList.module.scss";
-import {
-    MagnifyingGlass,
-    Horse,
-    Plus,
-    Binoculars,
-    Trash,
-    PencilSimpleLine,
-    AndroidLogo,
-    AppleLogo,
-    CheckCircle,
-    WarningCircle,
-    Question,
-    WindowsLogo,
-    PauseCircle,
+  Trash,
+  PencilSimpleLine,
+  AndroidLogo,
+  AppleLogo,
+  CheckCircle,
+  WarningCircle,
+  Question,
+  WindowsLogo,
+  PauseCircle,
+  AppStoreLogo,
+  Circuitry,
+  Cloud,
 } from "@phosphor-icons/react";
-import logo from "../../assets/img/logo.png";
 
 const getOSLogo = (oss) => {
-    console.log(oss);
-    if (oss?.some((os) => os === "Android")) {
-        return <AndroidLogo size={32} color="limegreen" />;
-    } else if (oss?.some((os) => os === "iOS")) {
-        return <AppleLogo size={32} color="royalBlue" />;
-    } else if (oss?.some((os) => os === "Windows")) {
-        return <WindowsLogo size={32} color="goldenrod" />;
-    } else {
-        return <Question size={32} color="gray" />;
-    }
+  if (oss?.some((os) => os === "Android")) {
+    return <AndroidLogo size={32} color="limegreen" />;
+  } else if (oss?.some((os) => os === "iOS")) {
+    return <AppStoreLogo size={32} color="royalBlue" />;
+  } else if (oss?.some((os) => os === "Win")) {
+    return <WindowsLogo size={32} color="SandyBrown" />;
+  } else if (oss?.some((os) => os === "Mac")) {
+    return <AppleLogo size={32} color="skyblue" />;
+  } else if (oss?.some((os) => os === "Hardware")) {
+    return <Circuitry size={32} color="hotpink" />;
+  } else if (oss?.some((os) => os === "Cloud")) {
+    return <Cloud size={32} color="gold" />;
+  } else {
+    return <Question size={32} color="gray" />;
+  }
 };
 
 const ProductStatusLogo = ({ status }) => {
-    switch (status) {
-        case 0:
-            return <WarningCircle color="red" size={20} />;
-        case 1:
-            return <CheckCircle color="green" size={20} />;
-        case 2:
-            return <PauseCircle color="dimgray" size={20} />;
-
-        default:
-            return <WarningCircle color="red" size={20} />;
-    }
+  switch (status) {
+    case 0:
+      return <WarningCircle color="red" size={22} />;
+    case 1:
+      return <CheckCircle color="green" size={22} />;
+    case 2:
+      return <PauseCircle color="dimgray" size={22} />;
+    default:
+      return <Question color="gray" size={22} />;
+  }
 };
 
 const CardValue = ({ label, value }) => {
-    return (
-        <div style={{ display: "flex" }}>
-            <span
-                style={{
-                    flex: 1,
-                    fontSize: "small",
-                    fontWeight: "bold",
-                    alignItems: "center",
-                }}
-            >
-                {label}
-            </span>
-            <span
-                style={{
-                    flex: 2,
-                    fontSize: "small",
-                }}
-            >
-                {value}
-            </span>
-        </div>
-    );
+  return (
+    <div style={{ display: "flex" }}>
+      <span
+        style={{
+          flex: 1,
+          fontSize: "small",
+          fontWeight: "bold",
+          alignItems: "center",
+        }}
+      >
+        {label}
+      </span>
+      <span
+        style={{
+          flex: 2,
+          fontSize: "small",
+        }}
+      >
+        {value}
+      </span>
+    </div>
+  );
 };
 
-const ProductList = () => {
-    const productsIds = useSelector(selectAllProducts);
-
-    const { isLoading, isSuccess, isError, error } = useGetProductsQuery();
-
-    let content;
-    if (isLoading) {
-        content = <p>"Loading..."</p>;
-    } else if (isSuccess) {
-        content = (
-            <main className={style.main}>
-                <header>
-                    <div className={`responsiveWrapper ${style.headerContent}`}>
-                        <img src={logo} />
-                        <span className={style.logoName}>Frontend</span>
-                    </div>
-                </header>
-                <div className="responsiveWrapper">
-                    <div className={style.subHeader}>
-                        <h2>Products</h2>
-                        <div className={style.search}>
-                            <input type="text" placeholder="Search" />
-                            <button type="submit">
-                                <MagnifyingGlass />
-                            </button>
-                        </div>
-                    </div>
+const ProductList = ({
+  searchResults = [],
+  onEditClicked,
+  onDeleteClicked,
+}) => {
+  return (
+    <div className={`responsiveWrapper ${style.content}`}>
+      <div className="card-grid">
+        {searchResults.map((p) => {
+          return (
+            <article key={p.id} className="card">
+              <div className="card-header">
+                <div>
+                  <span>{getOSLogo(p?.platforms)}</span>
+                  <h3>{p?.name}</h3>
                 </div>
-                <div className={`responsiveWrapper ${style.content}`}>
-                    <div
-                        className="content-panel"
-                        style={{
-                            // backgroundColor: "lightcyan",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <div className="vertical-tabs">
-                            <a
-                                href="#"
-                                className="active"
-                                style={{
-                                    gap: "0.3rem",
-                                }}
-                            >
-                                <Binoculars /> View all
-                            </a>
-                            <a
-                                href="#"
-                                style={{
-                                    // backgroundColor: "pink",
-                                    gap: "0.3rem",
-                                }}
-                            >
-                                <Plus /> Add product
-                            </a>
-                        </div>
-                    </div>
-                    <div className="card-grid">
-                        {productsIds.map((p) => {
-                            return (
-                                <article className="card">
-                                    <div className="card-header">
-                                        <div>
-                                            <span>
-                                                {getOSLogo(p?.platforms)}
-                                            </span>
-                                            <h3>{p?.name}</h3>
-                                        </div>
-                                        <ProductStatusLogo status={p.status} />
-                                        {/* <label className="toggle">
-                                            <input type="checkbox" checked />
-                                            <span></span>
-                                        </label> */}
-                                    </div>
-                                    <div className="card-body">
-                                        <CardValue
-                                            label="Description:"
-                                            value={p.description}
-                                        />
-                                        <CardValue
-                                            label="Value:"
-                                            value={p.value}
-                                        />
-                                        <CardValue
-                                            label="Created:"
-                                            value={p.createdAt}
-                                        />
-                                        <CardValue
-                                            label="Updated:"
-                                            value={p.updatedAt}
-                                        />
-                                    </div>
-                                    <div className="card-footer">
-                                        <a href="#" className="icon-button">
-                                            <Trash size={22} color="crimson" />
-                                        </a>
-                                        <a href="#" className="icon-button">
-                                            <PencilSimpleLine
-                                                size={22}
-                                                color="royalBlue"
-                                            />
-                                        </a>
-                                    </div>
-                                </article>
-                            );
-                        })}
-                        {/* </div> */}
-                    </div>
-                </div>
-            </main>
-        );
-    } else if (isError) {
-        content = <p>{error}</p>;
-    }
-
-    return content;
+                <ProductStatusLogo status={p.status} />
+              </div>
+              <div className="card-body">
+                <CardValue label="Description:" value={p.description} />
+                <CardValue label="Value:" value={p.value} />
+                <CardValue label="Store Id:" value={p.store ?? "-"} />
+                <CardValue label="Security:" value={p.security} />
+                <CardValue label="Created:" value={p.createdAt} />
+                <CardValue label="Updated:" value={p.updatedAt} />
+              </div>
+              <div className="card-footer">
+                <span
+                  className="icon-button"
+                  onClick={() => onDeleteClicked({ productId: p.id })}
+                >
+                  <Trash size={22} color="crimson" />
+                </span>
+                <span
+                  className="icon-button"
+                  onClick={() => onEditClicked({ productId: p.id })}
+                >
+                  <PencilSimpleLine size={22} color="royalBlue" />
+                </span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default ProductList;
