@@ -14,8 +14,66 @@ import {
     Trash,
     PencilSimpleLine,
     AndroidLogo,
+    AppleLogo,
+    CheckCircle,
+    WarningCircle,
+    Question,
+    WindowsLogo,
+    PauseCircle,
 } from "@phosphor-icons/react";
 import logo from "../../assets/img/logo.png";
+
+const getOSLogo = (oss) => {
+    console.log(oss);
+    if (oss?.some((os) => os === "Android")) {
+        return <AndroidLogo size={32} color="limegreen" />;
+    } else if (oss?.some((os) => os === "iOS")) {
+        return <AppleLogo size={32} color="royalBlue" />;
+    } else if (oss?.some((os) => os === "Windows")) {
+        return <WindowsLogo size={32} color="goldenrod" />;
+    } else {
+        return <Question size={32} color="gray" />;
+    }
+};
+
+const ProductStatusLogo = ({ status }) => {
+    switch (status) {
+        case 0:
+            return <WarningCircle color="red" size={20} />;
+        case 1:
+            return <CheckCircle color="green" size={20} />;
+        case 2:
+            return <PauseCircle color="dimgray" size={20} />;
+
+        default:
+            return <WarningCircle color="red" size={20} />;
+    }
+};
+
+const CardValue = ({ label, value }) => {
+    return (
+        <div style={{ display: "flex" }}>
+            <span
+                style={{
+                    flex: 1,
+                    fontSize: "small",
+                    fontWeight: "bold",
+                    alignItems: "center",
+                }}
+            >
+                {label}
+            </span>
+            <span
+                style={{
+                    flex: 2,
+                    fontSize: "small",
+                }}
+            >
+                {value}
+            </span>
+        </div>
+    );
+};
 
 const ProductList = () => {
     const productsIds = useSelector(selectAllProducts);
@@ -29,14 +87,12 @@ const ProductList = () => {
         content = (
             <main className={style.main}>
                 <header>
-                    <div
-                        className={`${style.responsiveWrapper} ${style.headerContent}`}
-                    >
+                    <div className={`responsiveWrapper ${style.headerContent}`}>
                         <img src={logo} />
                         <span className={style.logoName}>Frontend</span>
                     </div>
                 </header>
-                <div className={style.responsiveWrapper}>
+                <div className="responsiveWrapper">
                     <div className={style.subHeader}>
                         <h2>Products</h2>
                         <div className={style.search}>
@@ -47,13 +103,14 @@ const ProductList = () => {
                         </div>
                     </div>
                 </div>
-                <div className={`${style.responsiveWrapper} ${style.content}`}>
+                <div className={`responsiveWrapper ${style.content}`}>
                     <div
                         className="content-panel"
                         style={{
                             // backgroundColor: "lightcyan",
                             display: "flex",
                             alignItems: "center",
+                            justifyContent: "center",
                         }}
                     >
                         <div className="vertical-tabs">
@@ -61,7 +118,6 @@ const ProductList = () => {
                                 href="#"
                                 className="active"
                                 style={{
-                                    // backgroundColor: "pink",
                                     gap: "0.3rem",
                                 }}
                             >
@@ -85,86 +141,33 @@ const ProductList = () => {
                                     <div className="card-header">
                                         <div>
                                             <span>
-                                                <AndroidLogo size={32} />
+                                                {getOSLogo(p?.platforms)}
                                             </span>
                                             <h3>{p?.name}</h3>
                                         </div>
+                                        <ProductStatusLogo status={p.status} />
                                         {/* <label className="toggle">
                                             <input type="checkbox" checked />
                                             <span></span>
                                         </label> */}
                                     </div>
                                     <div className="card-body">
-                                        <tbody>
-                                            <tr>
-                                                <td
-                                                    style={{
-                                                        fontSize: "small",
-                                                        fontWeight: "bold",
-                                                    }}
-                                                >
-                                                    Descr:
-                                                </td>
-                                                <td
-                                                    style={{
-                                                        fontSize: "small",
-                                                    }}
-                                                >
-                                                    {p?.description}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    style={{
-                                                        fontSize: "small",
-                                                        fontWeight: "bold",
-                                                    }}
-                                                >
-                                                    Value:
-                                                </td>
-                                                <td
-                                                    style={{
-                                                        fontSize: "small",
-                                                    }}
-                                                >
-                                                    {p?.value}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    style={{
-                                                        fontSize: "small",
-                                                        fontWeight: "bold",
-                                                    }}
-                                                >
-                                                    Created:
-                                                </td>
-                                                <td
-                                                    style={{
-                                                        fontSize: "small",
-                                                    }}
-                                                >
-                                                    {p?.createdAt}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    style={{
-                                                        fontSize: "small",
-                                                        fontWeight: "bold",
-                                                    }}
-                                                >
-                                                    Updated:
-                                                </td>
-                                                <td
-                                                    style={{
-                                                        fontSize: "small",
-                                                    }}
-                                                >
-                                                    {p?.updatedAt}
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        <CardValue
+                                            label="Description:"
+                                            value={p.description}
+                                        />
+                                        <CardValue
+                                            label="Value:"
+                                            value={p.value}
+                                        />
+                                        <CardValue
+                                            label="Created:"
+                                            value={p.createdAt}
+                                        />
+                                        <CardValue
+                                            label="Updated:"
+                                            value={p.updatedAt}
+                                        />
                                     </div>
                                     <div className="card-footer">
                                         <a href="#" className="icon-button">

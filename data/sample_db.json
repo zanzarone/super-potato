@@ -250,10 +250,34 @@
             "_id": "fsgroksdv",
             "description": "gwrgwegweg",
             "value": 7567,
-            "platforms": ["Android"],
+            "platforms": ["iOS"],
             "createdAt": "2021-06-03T14:22:07.808Z",
             "updatedAt": "2022-05-06T14:12:35.824Z",
             "name": "ehethrthrh",
+            "store": "xx.yyy.sssss"
+        },
+        {
+            "status": 0,
+            "security": 1,
+            "_id": "23fsfw34",
+            "description": "dadvfvf",
+            "value": 7567,
+            "platforms": ["Linux"],
+            "createdAt": "2021-06-03T14:22:07.808Z",
+            "updatedAt": "2022-05-06T14:12:35.824Z",
+            "name": ";sdf';s;",
+            "store": "xx.yyy.sssss"
+        },
+        {
+            "status": 2,
+            "security": 1,
+            "_id": "herhe234234",
+            "description": "f,l,fwel;fv",
+            "value": 2345,
+            "platforms": ["Windows"],
+            "createdAt": "2021-06-03T14:22:07.808Z",
+            "updatedAt": "2022-05-06T14:12:35.824Z",
+            "name": "dpskvpodsv",
             "store": "xx.yyy.sssss"
         }
     ]

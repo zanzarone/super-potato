@@ -208,12 +208,14 @@ span.toggle-box {
 //   outline: 0;
 // }
 
-// .responsive-wrapper {
-// width: 90%;
-// max-width: 1280px;
-// margin-left: auto;
-// margin-right: auto;
-// }
+.responsiveWrapper {
+    display: flex;
+    width: 90%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+}
 
 // .header {
 //   display: flex;
@@ -481,7 +483,7 @@ span.toggle-box {
     max-width: 280px;
     width: 25%;
     padding: 2rem 1rem 2rem 0;
-    margin-right: 3rem;
+    // margin-right: 3rem;
     @media (min-width: 800px) {
         display: block;
     }
