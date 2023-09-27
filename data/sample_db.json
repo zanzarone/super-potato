@@ -233,11 +233,11 @@
   ],
   "products": [
     {
-      "name": "gsdfgsdgdf",
+      "name": "Gandalf",
       "value": 7567,
-      "status": 0,
+      "status": 1,
       "description": "sssss",
-      "storeId": "xx.yyy.sssss",
+      "storeId": "",
       "platforms": [
         "Android"
       ],
@@ -245,52 +245,67 @@
       "_id": "dfgrhyrthrthrt",
       "createdAt": "2021-06-03T14:22:07.808Z",
       "security": 1,
-      "updatedAt": "2023-09-27T20:06:28.949Z"
+      "updatedAt": "2023-09-27T21:25:16.065Z"
     },
     {
-      "status": 1,
-      "security": 1,
-      "_id": "fsgroksdv",
-      "id": "fsgroksdv",
-      "description": "gwrgwegweg",
+      "name": "Frodo",
       "value": 7567,
+      "status": 1,
+      "description": "gwrgwegweg",
+      "storeId": "xx.yyy.sssss",
       "platforms": [
         "iOS"
       ],
+      "id": "fsgroksdv",
+      "_id": "fsgroksdv",
       "createdAt": "2021-06-03T14:22:07.808Z",
-      "updatedAt": "2022-05-06T14:12:35.824Z",
-      "name": "ehethrthrh",
-      "store": "xx.yyy.sssss"
+      "security": 1,
+      "updatedAt": "2023-09-27T21:25:32.195Z"
     },
     {
-      "status": 0,
-      "security": 1,
-      "_id": "23fsfw34",
-      "id": "23fsfw34",
-      "description": "dadvfvf",
+      "name": "Legolas",
       "value": 7567,
+      "status": 0,
+      "description": "dadvfvf",
+      "storeId": "",
       "platforms": [
-        "Linux"
+        "Mac"
       ],
+      "id": "23fsfw34",
+      "_id": "23fsfw34",
       "createdAt": "2021-06-03T14:22:07.808Z",
-      "updatedAt": "2022-05-06T14:12:35.824Z",
-      "name": ";sdf';s;",
-      "store": "xx.yyy.sssss"
+      "security": 1,
+      "updatedAt": "2023-09-27T21:26:19.752Z"
     },
     {
-      "status": 2,
-      "security": 1,
-      "_id": "herhe234234",
-      "id": "herhe234234",
-      "description": "f,l,fwel;fv",
+      "name": "Aragorn",
       "value": 2345,
+      "status": 0,
+      "description": "f,l,fwel;fv",
+      "storeId": "xx.yyy.sssss",
       "platforms": [
-        "Windows"
+        "Cloud"
       ],
+      "id": "herhe234234",
+      "_id": "herhe234234",
       "createdAt": "2021-06-03T14:22:07.808Z",
-      "updatedAt": "2022-05-06T14:12:35.824Z",
-      "name": "dpskvpodsv",
-      "store": "xx.yyy.sssss"
+      "security": 1,
+      "updatedAt": "2023-09-27T21:26:53.756Z"
+    },
+    {
+      "name": "Gimli",
+      "value": "17099",
+      "status": 0,
+      "description": "A strong dwarf",
+      "storeId": "tolkien.lotr",
+      "platforms": [
+        "Hardware"
+      ],
+      "id": "tV11kwMd4eDwgJksD9AH4",
+      "_id": "tV11kwMd4eDwgJksD9AH4",
+      "security": 1,
+      "createdAt": "2023-09-27T21:29:25.289Z",
+      "updatedAt": "2023-09-27T21:29:25.289Z"
     }
   ]
 }

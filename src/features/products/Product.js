@@ -45,7 +45,7 @@ const Product = ({
         if (!canSave) {
             return;
         }
-        const { error } = await onAdd({
+        const { error } = onAdd({
             name,
             value,
             status,

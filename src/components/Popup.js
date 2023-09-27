@@ -26,9 +26,13 @@ const Popup = ({ title = "", message = "", classType = "success" }) => {
                     }}
                 >
                     {icon}
-                    {title}
+                    <span style={{ fontSize: 12, fontWeight: "bold" }}>
+                        {title}
+                    </span>
                 </span>
-                <small>{message}</small>
+                <span style={{ fontSize: 12, fontWeight: "medium" }}>
+                    {message}
+                </span>
             </div>
         </div>
     );

@@ -42,7 +42,7 @@ const UpdateProduct = ({ onFinished, productId }) => {
                 storeId,
                 platforms: [platform],
                 //
-                id: product._id + "aaa",
+                id: product.id,
                 _id: product._id,
                 createdAt: product.createdAt,
                 security: product.security,
