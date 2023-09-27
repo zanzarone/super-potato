@@ -1,33 +1,37 @@
 import React from "react";
+import style from "./Popup.module.scss";
+import { Warning, Info, CheckFat } from "@phosphor-icons/react";
 // red FA5252
 // green 32CD32
-const Popup = ({ title = "", message = "", color }) => {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        top: 10,
-        right: 10,
-        minWidth: 200,
-        // minHeight: 150,
-        borderRadius: 8,
-        backgroundColor: "#32CD32",
-        display: "flex",
-        //   padding: "0 .5rem",
-      }}
-    >
-      <div
-        style={{
-          margin: ".5rem",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <span style={{ color: "snow" }}>{title}</span>
-        <small style={{ color: "snow" }}>{message}</small>
-      </div>
-    </div>
-  );
+const Popup = ({ title = "", message = "", classType = "success" }) => {
+    let className = style.info;
+    let icon = <Info size={18} />;
+    if (classType === "success") {
+        icon = <CheckFat size={18} />;
+        className = style.success;
+    } else if (classType === "danger") {
+        icon = <Warning size={18} />;
+        className = style.danger;
+    } else if (classType === "info") {
+        className = style.info;
+    }
+    return (
+        <div className={`${style.content} ${className}`}>
+            <div className={`${style.inner}`}>
+                <span
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: ".3rem",
+                    }}
+                >
+                    {icon}
+                    {title}
+                </span>
+                <small>{message}</small>
+            </div>
+        </div>
+    );
 };
 
 export default Popup;
