@@ -2,7 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import useTitle from "./hooks/useTitle";
-import Products from "./features/products/Products";
+import ProductsPage from "./features/products/ProductsPage";
+import EditProductPage from "./features/products/EditProductPage";
+import PublicLayout from "./components/PublicLayout";
+import AddProductPage from "./features/products/AddProductPage";
 
 function App() {
   useTitle("Frontend");
@@ -11,10 +14,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* //# public routes */}
-        <Route path="products">
-          <Route index element={<Products />} />
-          {/* <Route index element={<AddPostForm />} />
-          <Route path=":postId" element={<SinglePostPage />} /> */}
+        <Route path="products" element={<PublicLayout />}>
+          <Route index element={<ProductsPage />} />
+          <Route path=":productId" element={<EditProductPage />} />
+          <Route path="add" element={<AddProductPage />} />
         </Route>
       </Route>
     </Routes>
@@ -22,7 +25,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Route element={<Login />} /> */
-}

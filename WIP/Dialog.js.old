@@ -1,0 +1,49 @@
+import React, { useRef, useEffect } from "react";
+import style from "../assets/styles/Dialog.module.scss";
+
+const Dialog = ({
+  icon,
+  title,
+  message,
+  children,
+  isVisible,
+  onClose,
+  onOk,
+}) => {
+  const dialogRef = useRef();
+
+  useEffect(() => {
+    if (isVisible === true) {
+      dialogRef.current?.showModal();
+    } else if (isVisible === false) {
+      dialogRef.current?.close();
+    }
+  }, [isVisible]);
+
+  const actions = children;
+
+  return (
+    <dialog ref={dialogRef} className={style.modalContainer}>
+      <div className={style.modal}>
+        <span
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: ".3rem",
+          }}
+        >
+          {icon}
+          <span style={{ fontSize: 14, fontWeight: "bold" }}>{title}</span>
+        </span>
+        <span style={{ fontSize: 13, fontWeight: "medium" }}>{message}</span>
+        <span
+          style={{ display: "flex", justifyContent: "flex-end", gap: ".5rem" }}
+        >
+          {actions}
+        </span>
+      </div>
+    </dialog>
+  );
+};
+
+export default Dialog;

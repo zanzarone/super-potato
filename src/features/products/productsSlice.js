@@ -78,6 +78,17 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         { type: "Product", id: arg.id },
       ],
     }),
+    //# DELETE - aggiornare tutto il record del prodotto - /products/${initialProd.id}
+    deleteProduct: builder.mutation({
+      query: ({ id }) => ({
+        url: `/products/${id}`,
+        method: "DELETE",
+        body: { id },
+      }),
+      invalidatesTags: (result, error, arg) => [
+        { type: "Product", id: arg.id },
+      ],
+    }),
   }),
 });
 
@@ -86,6 +97,7 @@ export const {
   useGetProductsQuery,
   useAddNewProductMutation,
   useUpdateProductMutation,
+  useDeleteProductMutation,
 } = productsApiSlice;
 
 //? Non esegue la query, prende solo il risultato

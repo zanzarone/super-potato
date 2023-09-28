@@ -1,8 +1,10 @@
 import React from "react";
 import { useAddNewProductMutation } from "./productsSlice";
 import Product from "./Product";
+import ProductHeader from "./ProductHeader";
+import style from "../../assets/styles/Products.module.scss";
 
-const AddProduct = ({ onFinished }) => {
+const AddProductPage = () => {
   const [addNewProduct, { isLoading }] = useAddNewProductMutation();
 
   const handleOnAdd = async ({
@@ -28,22 +30,18 @@ const AddProduct = ({ onFinished }) => {
     return null;
   };
 
-  const handleOnCanceled = () => {
-    onFinished();
-  };
-  const handleOnFinished = () => {
-    onFinished();
-  };
-
   return (
-    <Product
-      title="Add new product"
-      isLoading={isLoading}
-      onAdd={handleOnAdd}
-      onFinished={handleOnFinished}
-      onCanceled={handleOnCanceled}
-    />
+    <>
+      <ProductHeader />
+      <div className={`responsiveWrapper ${style.content}`}>
+        <Product
+          title="Add new product"
+          isLoading={isLoading}
+          onAdd={handleOnAdd}
+        />
+      </div>
+    </>
   );
 };
 
-export default AddProduct;
+export default AddProductPage;

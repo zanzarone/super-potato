@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./PublicHeader.module.scss";
+import style from "../assets/styles/PublicHeader.module.scss";
 import logo from "../assets/img/logo.png";
 
 const PublicHeader = () => {
