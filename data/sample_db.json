@@ -250,7 +250,7 @@
     {
       "name": "tYnT0g1Q4V",
       "value": 53936.59413175118,
-      "status": 0,
+      "status": 1,
       "description": "rIcN1YpA8B7rFwRtU9sT",
       "store": "dffffdfgg",
       "platforms": [
@@ -385,7 +385,7 @@
     {
       "name": "nFyS3QxOwIzL9A0qP8fR",
       "value": 88598.54156563627,
-      "status": 1,
+      "status": 0,
       "description": "jI2kL8mR7oP9xO5wI4zL9A0qP8fR",
       "store": "H2gR3v",
       "platforms": [
@@ -460,7 +460,7 @@
     {
       "name": "SRM Viewer Win",
       "value": "56000",
-      "status": 1,
+      "status": 0,
       "description": "pippo wai",
       "store": "de.srm.ciwati",
       "platforms": [
@@ -475,17 +475,17 @@
     {
       "name": "SRM Service",
       "value": "22031987",
-      "status": 1,
+      "status": 0,
       "description": "Web",
       "store": "",
       "platforms": [
-        "Web"
+        "Hardware"
       ],
       "id": "Xl4k8DzCa_GuKQhnhrRT3",
       "_id": "Xl4k8DzCa_GuKQhnhrRT3",
       "createdAt": "2023-09-28T15:39:22.150Z",
       "security": 1,
-      "updatedAt": "2023-09-28T15:42:16.843Z"
+      "updatedAt": "2023-09-28T21:37:30.642Z"
     }
   ],
   "versions": []
