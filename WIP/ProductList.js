@@ -13,7 +13,7 @@ import {
   PauseCircle,
   AppStoreLogo,
   Circuitry,
-  Cloud,
+  G,
 } from "@phosphor-icons/react";
 
 const getOSLogo = (oss) => {
@@ -27,8 +27,8 @@ const getOSLogo = (oss) => {
     return <AppleLogo size={32} color="skyblue" />;
   } else if (oss?.some((os) => os === "Hardware")) {
     return <Circuitry size={32} color="hotpink" />;
-  } else if (oss?.some((os) => os === "Cloud")) {
-    return <Cloud size={32} color="DodgerBlue" />;
+  } else if (oss?.some((os) => os === "Web")) {
+    return <Globe size={32} color="DodgerBlue" />;
   } else {
     return <Question size={32} color="gray" />;
   }

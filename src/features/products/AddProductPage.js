@@ -21,7 +21,7 @@ const AddProductPage = () => {
         value,
         status,
         description,
-        storeId,
+        store: storeId,
         platforms: [platform],
       }).unwrap();
     } catch (err) {

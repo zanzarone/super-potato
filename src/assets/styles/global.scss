@@ -458,3 +458,10 @@ span.toggle-box {
   background-color: #f8d7da;
   color: var(--c-background-primary);
 }
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}

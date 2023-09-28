@@ -89,6 +89,41 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         { type: "Product", id: arg.id },
       ],
     }),
+    updateProductStatus: builder.mutation({
+      query: ({ id, status }) => ({
+        url: `/products/${id}`,
+        method: "PATCH",
+        // In a real app, we'd probably need to base this on user ID somehow
+        // so that a user can't do the same reaction more than once
+        body: { status },
+      }),
+      invalidatesTags: (result, error, arg) => [
+        { type: "Product", id: arg.id },
+      ],
+      // async onQueryStarted(
+      //   { postId, reactions },
+      //   { dispatch, queryFulfilled }
+      // ) {
+      //   // `updateQueryData` requires the endpoint name and cache key arguments,
+      //   // so it knows which piece of cache state to update
+      //   const patchResult = dispatch(
+      //     extendedApiSlice.util.updateQueryData(
+      //       "getPosts",
+      //       undefined,
+      //       (draft) => {
+      //         // The `draft` is Immer-wrapped and can be "mutated" like in createSlice
+      //         const post = draft.entities[postId];
+      //         if (post) post.reactions = reactions;
+      //       }
+      //     )
+      //   );
+      //   try {
+      //     await queryFulfilled;
+      //   } catch {
+      //     patchResult.undo();
+      //   }
+      // },
+    }),
   }),
 });
 
@@ -98,6 +133,7 @@ export const {
   useAddNewProductMutation,
   useUpdateProductMutation,
   useDeleteProductMutation,
+  useUpdateProductStatusMutation,
 } = productsApiSlice;
 
 //? Non esegue la query, prende solo il risultato

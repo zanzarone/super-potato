@@ -252,15 +252,15 @@
       "value": 53936.59413175118,
       "status": 0,
       "description": "rIcN1YpA8B7rFwRtU9sT",
-      "store": "dffffdfgg",
+      "store": "E21bU",
       "platforms": [
         "iOS"
       ],
       "id": "f7G4Hd5LsX3zO1y0M1g2",
       "_id": "f7G4Hd5LsX3zO1y0M1g2",
-      "createdAt": "2023-09-28T10:00:00Z",
       "security": 2,
-      "updatedAt": "2023-09-28T15:05:19.211Z"
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
     },
     {
       "name": "kZrV6vG5lQ",
@@ -456,37 +456,7 @@
       "security": 1,
       "createdAt": "2023-09-28T10:00:00Z",
       "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "SRM Viewer Win",
-      "value": "56000",
-      "status": 1,
-      "description": "pippo wai",
-      "store": "de.srm.ciwati",
-      "platforms": [
-        "Win"
-      ],
-      "id": "OWAx-PskKUiLMjZxKZDyT",
-      "_id": "OWAx-PskKUiLMjZxKZDyT",
-      "createdAt": "2023-09-28T15:12:52.484Z",
-      "security": 1,
-      "updatedAt": "2023-09-28T15:37:26.772Z"
-    },
-    {
-      "name": "SRM Service",
-      "value": "22031987",
-      "status": 1,
-      "description": "Web",
-      "store": "",
-      "platforms": [
-        "Web"
-      ],
-      "id": "Xl4k8DzCa_GuKQhnhrRT3",
-      "_id": "Xl4k8DzCa_GuKQhnhrRT3",
-      "createdAt": "2023-09-28T15:39:22.150Z",
-      "security": 1,
-      "updatedAt": "2023-09-28T15:42:16.843Z"
     }
   ],
-  "versions": []
+  versions:[]
 }

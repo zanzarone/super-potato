@@ -4,6 +4,7 @@ import {
   selectAllProducts,
   useDeleteProductMutation,
   useGetProductsQuery,
+  useUpdateProductStatusMutation,
 } from "./productsSlice";
 import { useSelector } from "react-redux";
 import { compareAsc, parseISO } from "date-fns";
@@ -21,7 +22,7 @@ import {
   PauseCircle,
   AppStoreLogo,
   Circuitry,
-  Cloud,
+  Globe,
 } from "@phosphor-icons/react";
 import useTitle from "../../hooks/useTitle";
 import ProductHeader from "./ProductHeader";
@@ -61,8 +62,8 @@ const getOSLogo = (oss) => {
     return <AppleLogo size={32} color="skyblue" />;
   } else if (oss?.some((os) => os === "Hardware")) {
     return <Circuitry size={32} color="hotpink" />;
-  } else if (oss?.some((os) => os === "Cloud")) {
-    return <Cloud size={32} color="DodgerBlue" />;
+  } else if (oss?.some((os) => os === "Web")) {
+    return <Globe size={32} color="DodgerBlue" />;
   } else {
     return <Question size={32} color="gray" />;
   }
@@ -128,6 +129,7 @@ const ProductsPage = () => {
     error: getProductsError,
   } = useGetProductsQuery();
   const [deleteProduct] = useDeleteProductMutation();
+  const [updateProductStatus] = useUpdateProductStatusMutation();
 
   useEffect(() => {
     setProds(products);
@@ -140,6 +142,30 @@ const ProductsPage = () => {
   if (isError) {
     return <p>{getProductsError}</p>;
   }
+
+  const handleOnProductStatusChange = async (e, id) => {
+    console.log(e.target.checked);
+    try {
+      await updateProductStatus({
+        id,
+        status: e.target.checked ? 1 : 0,
+      }).unwrap();
+      setSuccess("Hooray! Product status updated!");
+      setTimeout(() => {
+        setSuccess();
+      }, 2000);
+    } catch (err) {
+      console.log(err);
+      setError(
+        err?.message
+          ? err.message
+          : "An unknow error occurred, please try again later."
+      );
+      setTimeout(() => {
+        setError();
+      }, 3000);
+    }
+  };
 
   const DeleteDialog = () => {
     async function handleDialogOnClose() {
@@ -202,12 +228,32 @@ const ProductsPage = () => {
                   <div className="card-body">
                     <CardValue label="Description:" value={p.description} />
                     <CardValue label="Value:" value={p.value} />
-                    <CardValue label="Store Id:" value={p.store ?? "-"} />
+                    <CardValue
+                      label="Store Id:"
+                      value={p?.store?.length > 0 ? p.store : "-"}
+                    />
                     <CardValue label="Security:" value={p.security} />
                     <CardValue label="Created:" value={p.createdAt} />
                     <CardValue label="Updated:" value={p.updatedAt} />
                   </div>
                   <div className="card-footer">
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "0.2rem",
+                        alignItems: "center",
+                      }}
+                    >
+                      <small>Enable:</small>
+                      <label className="toggle">
+                        <input
+                          type="checkbox"
+                          checked={p.status === 1}
+                          onChange={(e) => handleOnProductStatusChange(e, p.id)}
+                        />
+                        <span></span>
+                      </label>
+                    </div>
                     <Link
                       to={`/products?showDialog=${p.id}`}
                       className="icon-button"

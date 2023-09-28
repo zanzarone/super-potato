@@ -1,14 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import PublicHeader from "./PublicHeader";
 
-const PublicLayout = () => {
+const WelcomePage = () => {
   return (
     <main className="main">
       <PublicHeader />
-      <Outlet />
+      <div>WelcomePage</div>
     </main>
   );
 };
 
-export default PublicLayout;
+export default WelcomePage;

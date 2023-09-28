@@ -35,7 +35,7 @@ const EditProductPage = () => {
         value,
         status,
         description,
-        storeId,
+        store: storeId,
         platforms: [platform],
         //
         id: product.id,

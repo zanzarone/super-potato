@@ -3,7 +3,7 @@ import style from "../../assets/styles/Products.module.scss";
 import Popup from "../../components/Popup";
 import { useNavigate } from "react-router-dom";
 
-const platformsKeys = ["Android", "iOS", "Mac", "Win", "Hardware", "Cloud"];
+const platformsKeys = ["Android", "iOS", "Mac", "Win", "Hardware", "Web"];
 const statusKeys = [
   { name: "Enabled", value: 1 },
   { name: "Disabled", value: 0 },
