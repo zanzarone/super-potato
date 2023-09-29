@@ -233,230 +233,215 @@
   ],
   "products": [
     {
-      "name": "ZrRd4WfY3T",
-      "value": 52525.95714537523,
-      "status": 1,
-      "description": "zWQOApIXN7R5LJj7b9fs",
-      "store": "G28hT",
-      "platforms": [
-        "Mac"
-      ],
-      "id": "x0zNwFy3Y2aJ1H4iX5Og",
-      "_id": "x0zNwFy3Y2aJ1H4iX5Og",
-      "security": 0,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "tYnT0g1Q4V",
-      "value": 53936.59413175118,
-      "status": 0,
-      "description": "rIcN1YpA8B7rFwRtU9sT",
-      "store": "E21bU",
-      "platforms": [
-        "iOS"
-      ],
-      "id": "f7G4Hd5LsX3zO1y0M1g2",
-      "_id": "f7G4Hd5LsX3zO1y0M1g2",
-      "security": 2,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "kZrV6vG5lQ",
-      "value": 91214.48821221836,
-      "status": 1,
-      "description": "nFyS3QxOwIzL9A0qP8fR",
-      "store": "I53gR",
-      "platforms": [
-        "Android"
-      ],
-      "id": "b0D4oR6pJ2zS3I5lQ7W8",
-      "_id": "b0D4oR6pJ2zS3I5lQ7W8",
-      "security": 1,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "aF9sD8sT1z",
-      "value": 86917.8503443521,
+      "name": "Flibbertigibbet",
+      "value": 93245,
       "status": 0,
       "description": "uN0wP8bR3yT5vU2zL7qI",
-      "store": "X4cB7a",
+      "storeId": "X4cB7a",
       "platforms": [
         "Win"
       ],
-      "id": "oB0cR2pJ5aS8zD7I6yT1vU9wX3",
+      "id": 1632803945,
       "_id": "oB0cR2pJ5aS8zD7I6yT1vU9wX3",
       "security": 0,
       "createdAt": "2023-09-28T10:00:00Z",
       "updatedAt": "2023-09-28T12:30:00Z"
     },
     {
-      "name": "tR3yX5wQ7lP9fS2aD8B1",
-      "value": 89003.88644542739,
+      "name": "Gobbledygook",
+      "value": 58123,
       "status": 1,
       "description": "jU4tQ1oFwX8rR2aH7j9kL3m",
-      "store": "G2hT9w",
+      "storeId": "G2hT9w",
       "platforms": [
         "Hardware"
       ],
-      "id": "iN7oF1yR6cA4S7wX3zD1O0mP5",
+      "id": 1632803955,
       "_id": "iN7oF1yR6cA4S7wX3zD1O0mP5",
       "security": 2,
       "createdAt": "2023-09-28T10:00:00Z",
       "updatedAt": "2023-09-28T12:30:00Z"
     },
     {
-      "name": "pH9dL0aT3fX1bA4wJ5S2",
-      "value": 65624.31839824568,
+      "name": "Lollygag",
+      "value": 75321,
       "status": 0,
-      "description": "aE2sL7tY4nG1qB8oFwX5rR9tU3sT",
-      "store": "E7bU3v",
-      "platforms": [
-        "Web"
-      ],
-      "id": "hO1bD4oR6pJ2zS3I5lQ7W8",
-      "_id": "hO1bD4oR6pJ2zS3I5lQ7W8",
-      "security": 2,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "jI2kL8mR7oP9xO5wI4zL9A0qP8fR",
-      "value": 68231.5468205029,
-      "status": 1,
-      "description": "lU1oB5cD4pJ3zS7I5lQ7W8",
-      "store": "I5gR3",
+      "description": "mollycoddle",
+      "storeId": "H2gT3w",
       "platforms": [
         "Mac"
       ],
-      "id": "lU1oB5cD4pJ3zS7I5lQ7W8",
-      "_id": "lU1oB5cD4pJ3zS7I5lQ7W8",
-      "security": 0,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "zYnT0g1Q4V",
-      "value": 41311.97199433495,
-      "status": 1,
-      "description": "tR3yX5wQ7lP9fS2aD8B1",
-      "store": "H1bT0a",
-      "platforms": [
-        "Win"
-      ],
-      "id": "tR3yX5wQ7lP9fS2aD8B1",
-      "_id": "tR3yX5wQ7lP9fS2aD8B1",
-      "security": 0,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "rIcN1YpA8B7rFwRtU9sT",
-      "value": 85508.16067103422,
-      "status": 0,
-      "description": "uN0wP8bR3yT5vU2zL7qI",
-      "store": "X1cB7a",
-      "platforms": [
-        "iOS"
-      ],
-      "id": "uN0wP8bR3yT5vU2zL7qI",
-      "_id": "uN0wP8bR3yT5vU2zL7qI",
-      "security": 0,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "f7G4Hd5LsX3zO1y0M1g2",
-      "value": 45268.6735698529,
-      "status": 0,
-      "description": "vW9xU0zA1mS8pJ2zS3I5lQ7W8",
-      "store": "Z0hT0w",
-      "platforms": [
-        "Android"
-      ],
-      "id": "vW9xU0zA1mS8pJ2zS3I5lQ7W8",
-      "_id": "vW9xU0zA1mS8pJ2zS3I5lQ7W8",
+      "id": 1632803965,
+      "_id": "aE2sL7tY4nG1qB8oFwX5rR9tU3sT",
       "security": 1,
       "createdAt": "2023-09-28T10:00:00Z",
       "updatedAt": "2023-09-28T12:30:00Z"
     },
     {
-      "name": "nFyS3QxOwIzL9A0qP8fR",
-      "value": 88598.54156563627,
+      "name": "Mollycoddle",
+      "value": 62540,
       "status": 1,
-      "description": "jI2kL8mR7oP9xO5wI4zL9A0qP8fR",
-      "store": "H2gR3v",
+      "description": "rhubarb",
+      "storeId": "Z1bT0w",
       "platforms": [
-        "Mac"
+        "iOS"
       ],
-      "id": "jI2kL8mR7oP9xO5wI4zL9A0qP8fR",
+      "id": 1632803975,
       "_id": "jI2kL8mR7oP9xO5wI4zL9A0qP8fR",
       "security": 2,
       "createdAt": "2023-09-28T10:00:00Z",
       "updatedAt": "2023-09-28T12:30:00Z"
     },
     {
-      "name": "kZrV6vG5lQ",
-      "value": 98779.78027468942,
+      "name": "Rhubarb",
+      "value": 95231,
       "status": 0,
-      "description": "tYnT0g1Q4V",
-      "store": "V2hT9w",
-      "platforms": [
-        "Web"
-      ],
-      "id": "tYnT0g1Q4V",
-      "_id": "tYnT0g1Q4V",
-      "security": 0,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "lU1oB5cD4pJ3zS7I5lQ7W8",
-      "value": 87921.6329817246,
-      "status": 1,
-      "description": "rIcN1YpA8B7rFwRtU9sT",
-      "store": "U7bU3v",
-      "platforms": [
-        "iOS"
-      ],
-      "id": "rIcN1YpA8B7rFwRtU9sT",
-      "_id": "rIcN1YpA8B7rFwRtU9sT",
-      "security": 1,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "hO1bD4oR6pJ2zS3I5lQ7W8",
-      "value": 42794.90411208452,
-      "status": 1,
-      "description": "aE2sL7tY4nG1qB8oFwX5rR9tU3sT",
-      "store": "A3bU1v",
-      "platforms": [
-        "Hardware"
-      ],
-      "id": "aE2sL7tY4nG1qB8oFwX5rR9tU3sT",
-      "_id": "aE2sL7tY4nG1qB8oFwX5rR9tU3sT",
-      "security": 0,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
-      "name": "iN7oF1yR6cA4S7wX3zD1O0mP5",
-      "value": 78148.222940229,
-      "status": 0,
-      "description": "pH9dL0aT3fX1bA4wJ5S2",
-      "store": "Z5bU3v",
+      "description": "flibbertigibbet",
+      "storeId": "U5bT4w",
       "platforms": [
         "Win"
       ],
-      "id": "pH9dL0aT3fX1bA4wJ5S2",
-      "_id": "pH9dL0aT3fX1bA4wJ5S2",
+      "id": 1632803985,
+      "_id": "tR3yX5wQ7lP9fS2aD8B1",
+      "security": 0,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Whippersnapper",
+      "value": 71654,
+      "status": 1,
+      "description": "lollygag",
+      "storeId": "X4bT9w",
+      "platforms": [
+        "Android"
+      ],
+      "id": 1632803995,
+      "_id": "hO1bD4oR6pJ2zS3I5lQ7W8",
       "security": 1,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Gibberish",
+      "value": 83145,
+      "status": 0,
+      "description": "whippersnapper",
+      "storeId": "A5bT1w",
+      "platforms": [
+        "Mac"
+      ],
+      "id": 1632804005,
+      "_id": "iN7oF1yR6cA4S7wX3zD1O0mP5",
+      "security": 2,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Hobbledehoy",
+      "value": 49218,
+      "status": 1,
+      "description": "quizzaciously",
+      "storeId": "H5bT3w",
+      "platforms": [
+        "iOS"
+      ],
+      "id": 1632804015,
+      "_id": "jI2kL8mR7oP9xO5wI4zL9A0qP8fR",
+      "security": 2,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Quizzaciously",
+      "value": 58712,
+      "status": 0,
+      "description": "mollycoddle",
+      "storeId": "I5bT4w",
+      "platforms": [
+        "Win"
+      ],
+      "id": 1632804025,
+      "_id": "tR3yX5wQ7lP9fS2aD8B1",
+      "security": 0,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Tatterdemalion",
+      "value": 87136,
+      "status": 1,
+      "description": "flibbertigibbet",
+      "storeId": "U5bT4w",
+      "platforms": [
+        "Android"
+      ],
+      "id": 1632804035,
+      "_id": "hO1bD4oR6pJ2zS3I5lQ7W8",
+      "security": 1,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Flummox",
+      "value": 92901,
+      "status": 0,
+      "description": "quizzaciously",
+      "storeId": "A2bT1w",
+      "platforms": [
+        "Mac"
+      ],
+      "id": 1632804045,
+      "_id": "iN7oF1yR6cA4S7wX3zD1O0mP5",
+      "security": 2,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Perplex",
+      "value": 75689,
+      "status": 0,
+      "description": "whippersnapper",
+      "storeId": "Y5bT2w",
+      "platforms": [
+        "iOS"
+      ],
+      "id": 1632804055,
+      "_id": "jI2kL8mR7oP9xO5wI4zL9A0qP8fR",
+      "security": 2,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Discombobulate",
+      "value": 98675,
+      "status": 0,
+      "description": "flibbertigibbet",
+      "storeId": "U1bT4w",
+      "platforms": [
+        "Web"
+      ],
+      "id": 1632804065,
+      "_id": "tR3yX5wQ7lP9fS2aD8B1",
+      "security": 0,
+      "createdAt": "2023-09-28T10:00:00Z",
+      "updatedAt": "2023-09-28T12:30:00Z"
+    },
+    {
+      "name": "Quixotic",
+      "value": 84215,
+      "status": 1,
+      "description": "whippersnapper",
+      "storeId": "X5bT1w",
+      "platforms": [
+        "Mac"
+      ],
+      "id": 1632804075,
+      "_id": "iN7oF1yR6cA4S7wX3zD1O0mP5",
+      "security": 2,
       "createdAt": "2023-09-28T10:00:00Z",
       "updatedAt": "2023-09-28T12:30:00Z"
     }
   ],
-  versions:[]
+  "versions": []
 }

@@ -1,25 +1,30 @@
 import React, { useRef, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import style from "../assets/styles/Dialog.module.scss";
 
-const Dialog = ({ children, visible, icon, title, onClose, onOk }) => {
+const Dialog = ({ children, icon, title, onClose, onOk }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const dialogRef = useRef();
+  const showDialog = searchParams.get("showDialog");
 
   useEffect(() => {
     // console.log(" pppppp ", showDialog);
-    if (visible === true) {
+    if (showDialog !== null) {
       dialogRef.current?.showModal();
     } else {
       dialogRef.current?.close();
     }
-  }, [visible]);
+  }, [showDialog]);
 
   const closeDialog = () => {
+    searchParams.delete("showDialog");
+    setSearchParams(searchParams);
     dialogRef.current?.close();
     onClose();
   };
 
   const clickOk = () => {
-    onOk();
+    onOk(showDialog);
     closeDialog();
   };
 
@@ -38,12 +43,7 @@ const Dialog = ({ children, visible, icon, title, onClose, onOk }) => {
         </span>
         <span style={{ fontSize: 13, fontWeight: "medium" }}>{children}</span>
         <span
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            gap: ".5rem",
-            marginTop: ".5rem",
-          }}
+          style={{ display: "flex", justifyContent: "flex-end", gap: ".5rem" }}
         >
           <button onClick={clickOk}>Ok</button>
           <button onClick={closeDialog} className="danger">

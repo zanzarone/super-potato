@@ -1,7 +1,7 @@
 import { createSelector, createEntityAdapter, nanoid } from "@reduxjs/toolkit";
 import { compareAsc, parseISO } from "date-fns";
 //? importo la route per effettuare le request rest
-import { apiSlice } from "../api/apiSlice";
+import { baseApiQuerySlice } from "../../store/api/baseApiQuerySlice";
 //? creo adapter con comparator per ritornare prima i prodotti ordinati in maniera ascendente per updatedAt
 const productsAdapter = createEntityAdapter({
   sortComparer: (a, b) => {
@@ -15,15 +15,18 @@ const productsAdapter = createEntityAdapter({
 const initialState = productsAdapter.getInitialState([]);
 
 //? sono pronto per creare le actions(endpoints route) per il modello
-export const productsApiSlice = apiSlice.injectEndpoints({
+export const productsApiSlice = baseApiQuerySlice.injectEndpoints({
   endpoints: (builder) => ({
     //# GET - tutti i prodotti - /products
     getProducts: builder.query({
       query: () => "/products",
+      extraOptions: () => ({
+        myOption: "Test Option",
+      }),
       transformResponse: (responseData) => {
         //? normalizzo il json. la risposta presa dalle API ha id ma e' mappato come _id per via di mongo
         const fetchedProducts = responseData.map((prod) => {
-          prod.id = prod._id;
+          if (!prod.id) prod.id = prod._id;
           return prod;
         });
         return productsAdapter.setAll(initialState, fetchedProducts);
@@ -40,15 +43,14 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     addNewProduct: builder.mutation({
       query: (initialProd) => {
         const date = new Date().toISOString();
-        const id = nanoid();
         return {
           url: "/products",
           method: "POST",
           body: {
             ...initialProd,
             //? solo per ora, dopo la post VERA non ha bisogno di avere id settato!
-            id,
-            _id: id,
+            id: Date.now(),
+            _id: nanoid(),
             security: 1,
             createdAt: date,
             updatedAt: date,

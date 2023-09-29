@@ -63,7 +63,7 @@ const getOSLogo = (oss) => {
   } else if (oss?.some((os) => os === "Hardware")) {
     return <Circuitry size={32} color="hotpink" />;
   } else if (oss?.some((os) => os === "Web")) {
-    return <Globe size={32} color="DodgerBlue" />;
+    return <Globe size={32} color="Tomato" />;
   } else {
     return <Question size={32} color="gray" />;
   }
@@ -112,6 +112,7 @@ const ProductsPage = () => {
 
   const [error, setError] = useState();
   const [success, setSuccess] = useState();
+  const [dialog, setDialog] = useState({ visible: false });
   const [prods, setProds] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
@@ -170,10 +171,13 @@ const ProductsPage = () => {
   const DeleteDialog = () => {
     async function handleDialogOnClose() {
       console.log("Modal has closed");
+      setDialog({ visible: false });
     }
 
-    async function handleDialogOnOk(id) {
+    async function handleDialogOnOk() {
+      const id = dialog?.params?.id;
       console.log("Ok was clicked", id);
+      setDialog({ visible: false });
       try {
         await deleteProduct({ id: id }).unwrap();
         setSuccess("Hooray! Product deleted.");
@@ -195,11 +199,12 @@ const ProductsPage = () => {
 
     return (
       <Dialog
-        title={"Delete product"}
+        title={dialog?.title}
+        visible={dialog?.visible === true}
         onClose={handleDialogOnClose}
         onOk={handleDialogOnOk}
       >
-        <p>Are you sure you want to delete the product?</p>
+        {dialog?.message}
       </Dialog>
     );
   };
@@ -254,12 +259,20 @@ const ProductsPage = () => {
                         <span></span>
                       </label>
                     </div>
-                    <Link
-                      to={`/products?showDialog=${p.id}`}
+                    <span
+                      // to={`/products?showDialog=${p.id}`}
+                      onClick={() => {
+                        setDialog({
+                          visible: true,
+                          title: `Delete product`,
+                          message: `Are you sure you want to delte ${p?.name}?`,
+                          params: { id: p?.id },
+                        });
+                      }}
                       className="icon-button"
                     >
                       <Trash size={22} color="crimson" />
-                    </Link>
+                    </span>
                     <Link to={`${p.id}`} className="icon-button">
                       <PencilSimpleLine size={22} color="royalBlue" />
                     </Link>

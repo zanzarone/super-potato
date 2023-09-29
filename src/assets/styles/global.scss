@@ -167,6 +167,12 @@ button:disabled,
   &:focus {
     border: 2px solid var(--c-border-primary);
   }
+  &.loading {
+    background-color: #cdf1fd;
+    border-color: #cdf1fd;
+    color: #686b87;
+    font-style: italic;
+  }
 }
 
 input,

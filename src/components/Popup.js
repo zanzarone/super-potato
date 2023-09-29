@@ -12,19 +12,21 @@ const Popup = ({ title = "", message = "", classType = "infoBg" }) => {
   } else if (classType === "infoBg") {
   }
   return (
-    <div className={`${style.content} ${classType}`}>
-      <div className={`${style.inner}`}>
-        <span
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: ".3rem",
-          }}
-        >
-          {icon}
-          <span style={{ fontSize: 12, fontWeight: "bold" }}>{title}</span>
-        </span>
-        <span style={{ fontSize: 12, fontWeight: "medium" }}>{message}</span>
+    <div style={{ position: "relative", width: "100%" }}>
+      <div className={`${style.content} ${classType}`}>
+        <div className={`${style.inner}`}>
+          <span
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: ".3rem",
+            }}
+          >
+            {icon}
+            <span style={{ fontSize: 12, fontWeight: "bold" }}>{title}</span>
+          </span>
+          <span style={{ fontSize: 12, fontWeight: "medium" }}>{message}</span>
+        </div>
       </div>
     </div>
   );

@@ -2,10 +2,10 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import PublicHeader from "./PublicHeader";
 
-const PublicLayout = () => {
+const PublicLayout = ({ elements }) => {
   return (
     <main className="main">
-      <PublicHeader />
+      <PublicHeader elements={elements} />
       <Outlet />
     </main>
   );
