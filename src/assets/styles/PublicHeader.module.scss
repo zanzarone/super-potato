@@ -3,9 +3,16 @@
   font-size: large;
 }
 
+.logoContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .headerContent {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   align-items: center;
+  justify-content: space-between;
 }

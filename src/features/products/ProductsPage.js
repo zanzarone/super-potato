@@ -212,6 +212,7 @@ const ProductsPage = () => {
     if (isSuccess) {
         return (
             <>
+            
                 <DeleteDialog />
                 <ProductHeader
                     rightBarComponents={
@@ -221,6 +222,22 @@ const ProductsPage = () => {
                         />
                     }
                 />
+                {success && (
+                    <Popup
+                        title="Success"
+                        message={success}
+                        classType="successBg"
+                        type="fixed"
+                    />
+                )}
+                {error && (
+                    <Popup
+                        title="Error"
+                        message={error}
+                        classType="dangerBg"
+                        type="fixed"
+                    />
+                )}
                 <div className={`responsiveWrapper ${style.content}`}>
                     <div className="card-grid">
                         {searchResults.map((p) => {
@@ -317,22 +334,7 @@ const ProductsPage = () => {
                         })}
                     </div>
                 </div>
-                {success && (
-                    <Popup
-                        title="Success"
-                        message={success}
-                        classType="successBg"
-                        position="fixed"
-                    />
-                )}
-                {error && (
-                    <Popup
-                        title="Error"
-                        message={error}
-                        classType="dangerBg"
-                        position="fixed"
-                    />
-                )}
+                
             </>
         );
     }

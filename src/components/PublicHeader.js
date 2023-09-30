@@ -6,10 +6,12 @@ const PublicHeader = ({ elements = null }) => {
   return (
     <header>
       <div className={`responsiveWrapper ${style.headerContent}`}>
-        <img src={logo} />
-        <span className={style.logoName}>Frontend</span>
+        <div className={style.logoContent}>
+          <img src={logo} />
+          <span className={style.logoName}>Frontend</span>
+        </div>
+        {elements}
       </div>
-      {elements}
     </header>
   );
 };

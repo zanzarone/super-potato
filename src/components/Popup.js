@@ -7,7 +7,7 @@ const Popup = ({
     title = "",
     message = "",
     classType = "infoBg",
-    position = "absolute",
+    type = "absolute",
 }) => {
     let icon = <Info size={18} />;
     if (classType === "successBg") {
@@ -36,7 +36,7 @@ const Popup = ({
         </div>
     );
 
-    if (position === "absolute")
+    if (type === "absolute")
         return (
             <div style={{ position: "relative", width: "100%" }}>
                 <div className={`${style.content} ${classType}`}>{content}</div>

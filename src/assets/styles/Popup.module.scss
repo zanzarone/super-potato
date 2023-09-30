@@ -12,16 +12,14 @@
     z-index: 1000;
 }
 
-.contenFixed {
+.contentFixed {
     position: fixed;
     display: flex;
-    top: 0px;
-    left: 0px;
-    // right: 0px;
+    top: 16px;
+    left: 16px;
     min-width: 250px;
     border-radius: 8px;
     box-shadow: 0 3px 3px 0 rgba(#000, 0.05), 0 5px 15px 0 rgba(#000, 0.05);
-    // background-color: var(--c-background-quaternary);
     color: var(--c-text-primary);
     z-index: 1000;
 }

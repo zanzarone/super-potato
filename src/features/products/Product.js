@@ -104,9 +104,9 @@ const Product = ({
   return (
     <div className={style.addProdContent}>
       {success && (
-        <Popup title="Success" message={success} classType="successBg" />
+        <Popup title="Success" message={success} classType="successBg" type="fixed" />
       )}
-      {error && <Popup title="Error" message={error} classType="dangerBg" />}
+      {error && <Popup title="Error" message={error} classType="dangerBg"  type="fixed"/>}
       <article className="card">
         <div className="card-header">
           <div>

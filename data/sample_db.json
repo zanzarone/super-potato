@@ -13,21 +13,6 @@
   ],
   "products": [
     {
-      "name": "Samu ",
-      "value": 93245,
-      "status": 1,
-      "description": "uN0wP8bR3yT5vU2zL7qI",
-      "store": "",
-      "platforms": [
-        "Win"
-      ],
-      "id": 1632803945,
-      "_id": "oB0cR2pJ5aS8zD7I6yT1vU9wX3",
-      "createdAt": "2023-09-28T10:00:00Z",
-      "security": 0,
-      "updatedAt": "2023-09-29T13:34:17.006Z"
-    },
-    {
       "name": "Gobbledygook",
       "value": 58123,
       "status": 0,
@@ -220,7 +205,22 @@
       "_id": "4ouE2W-Xv8XsweGbRVzRY",
       "createdAt": "2023-09-29T13:35:41.398Z",
       "security": 1,
-      "updatedAt": "2023-09-29T14:00:58.108Z"
+      "updatedAt": "2023-09-30T21:08:40.433Z"
+    },
+    {
+      "name": "asdasdas",
+      "value": "34",
+      "status": 1,
+      "description": "asdasdasdas",
+      "store": "dggsdgs",
+      "platforms": [
+        "Mac"
+      ],
+      "id": 1696108297950,
+      "_id": "X3u4WWlCaQBVKlokVMB36",
+      "security": 1,
+      "createdAt": "2023-09-30T21:11:37.950Z",
+      "updatedAt": "2023-09-30T21:11:37.950Z"
     }
   ],
   "versions": []
