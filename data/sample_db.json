@@ -45,7 +45,7 @@
     {
       "name": "Lollygag",
       "value": 75321,
-      "status": 0,
+      "status": 1,
       "description": "mollycoddle",
       "store": "cicciciciadas",
       "platforms": [
@@ -210,7 +210,7 @@
     {
       "name": "qWqw",
       "value": "12123123",
-      "status": 1,
+      "status": 0,
       "description": "asdasdas",
       "store": "asdasfdas",
       "platforms": [
