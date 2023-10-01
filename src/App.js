@@ -8,7 +8,7 @@ import LayoutB from "./components/LayoutB";
 import AddProductPage from "./features/products/AddProductPage";
 import LoginPage from "./features/auth/LoginPage";
 import PersistLogin from "./features/auth/PersistLogin";
-import BoardPage from "./features/board/BoardPage";
+import WelcomePage from "./features/board/WelcomePage";
 import LayoutC from "./components/LayoutC";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
                 {/* //# Protected Routes */}
                 <Route element={<PersistLogin />}>
                     <Route path="board" element={<LayoutC />}>
-                        <Route index element={<BoardPage />} />
+                        <Route index element={<WelcomePage />} />
                     </Route>
                 </Route>
                 {/* <Route element={<PersistLogin />}> */}

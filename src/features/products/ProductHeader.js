@@ -1,7 +1,7 @@
 import React from "react";
 import { Binoculars, Plus } from "@phosphor-icons/react";
 import { Link, useLocation } from "react-router-dom";
-import style from "../../assets/styles/SubHeader.module.scss";
+import style from "../../assets/styles/SectionHeader.module.scss";
 
 const ProductHeader = ({ rightBarComponents }) => {
   const pathname = useLocation().pathname;

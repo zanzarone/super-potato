@@ -1,14 +1,17 @@
 import React from "react";
 import { useGetProductsQuery, useUpdateProductMutation } from "./productsSlice";
 import { useParams } from "react-router-dom";
-import ProductHeader from "./ProductHeader";
+import { Binoculars, Plus } from "@phosphor-icons/react";
+import { Link, useLocation } from "react-router-dom";
 import Product from "./Product";
 import style from "../../assets/styles/Products.module.scss";
+import SectionHeader from "../../components/SectionHeader";
 
 const EditProductPage = () => {
   const { productId } = useParams();
   const [updateProduct, { isLoading }] = useUpdateProductMutation();
-
+  const pathname = useLocation().pathname;
+  
   const {
     product,
     isLoading: isLoadingProducts,
@@ -55,7 +58,24 @@ const EditProductPage = () => {
   if (isSuccess)
     return (
       <>
-        <ProductHeader />
+        <SectionHeader navigationComponents={
+        <>
+        <Link
+              to={"/products"}
+              className={`item ${pathname === "/products" ? "active" : ""}`}
+            >
+              <Binoculars size={20} />
+              View all
+            </Link>
+            <Link
+              to={"/products/add"}
+              className={`item ${pathname === "/products/add" ? "active" : ""}`}
+            >
+              <Plus size={20} />
+              Add product
+            </Link>
+        </>
+      }/>
         <div className={`responsiveWrapper ${style.content}`}>
           <Product
             title={`Update product`}

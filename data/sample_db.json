@@ -195,7 +195,7 @@
     {
       "name": "qWqw",
       "value": "12123123",
-      "status": 0,
+      "status": 1,
       "description": "asdasdas",
       "store": "asdasfdas",
       "platforms": [
@@ -210,7 +210,7 @@
     {
       "name": "asdasdas",
       "value": "34",
-      "status": 1,
+      "status": 0,
       "description": "asdasdasdas",
       "store": "dggsdgs",
       "platforms": [

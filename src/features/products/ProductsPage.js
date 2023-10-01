@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
     selectAllProducts,
     useDeleteProductMutation,
@@ -24,8 +24,9 @@ import {
     Circuitry,
     Globe,
 } from "@phosphor-icons/react";
+import { Binoculars, Plus } from "@phosphor-icons/react";
 import useTitle from "../../hooks/useTitle";
-import ProductHeader from "./ProductHeader";
+import SectionHeader from "../../components/SectionHeader";
 import Dialog from "../../components/Dialog.js";
 import Popup from "../../components/Popup";
 
@@ -115,6 +116,7 @@ const ProductsPage = () => {
     const [dialog, setDialog] = useState({ visible: false });
     const [prods, setProds] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
+    const pathname = useLocation().pathname;
 
     const products = useSelector(selectAllProducts)?.sort((a, b) => {
         if (!b?.updatedAt || !a?.updatedAt) return 0;
@@ -214,7 +216,23 @@ const ProductsPage = () => {
             <>
             
                 <DeleteDialog />
-                <ProductHeader
+                <SectionHeader navigationComponents={
+                    <>
+                    <Link
+                        to={"/products"}
+                        className={`item ${pathname === "/products" ? "active" : ""}`}
+                        >
+                        <Binoculars size={20} />
+                        View all
+                        </Link>
+                        <Link
+                        to={"/products/add"}
+                        className={`item ${pathname === "/products/add" ? "active" : ""}`}
+                        >
+                        <Plus size={20} />
+                        Add product
+                        </Link>
+                    </>}
                     rightBarComponents={
                         <SearchBar
                             products={prods}
