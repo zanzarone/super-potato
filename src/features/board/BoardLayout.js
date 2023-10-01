@@ -4,22 +4,29 @@ import BoardHeader from "./BoardHeader";
 // import DashFooter from './DashFooter'
 
 const BoardLayout = () => {
-  return (
-    <>
-      <BoardHeader />
-      <div
-        className={`responsiveWrapper`}
-        style={{
-          display: "flex",
-          paddingTop: "2rem",
-          paddingBottom: "2rem",
-          backgroundColor: "red",
-        }}
-      >
-        <Outlet />
-      </div>
-      {/* <DashFooter /> */}
-    </>
-  );
+    return (
+        <>
+            <BoardHeader />
+            <div className={"responsiveWrapper"}>
+                <div className="content">
+                    <div className="content-panel">
+                        <div className="vertical-tabs">
+                            <a href="#" className="active">
+                                View all
+                            </a>
+                            <a href="#">Developer tools</a>
+                            <a href="#">Communication</a>
+                            <a href="#">Productivity</a>
+                            <a href="#">Browser tools</a>
+                            <a href="#">Marketplace</a>
+                        </div>
+                    </div>
+                    <div className="content-main">soka</div>
+                </div>
+                {/* <Outlet /> */}
+            </div>
+            {/* <DashFooter /> */}
+        </>
+    );
 };
 export default BoardLayout;
