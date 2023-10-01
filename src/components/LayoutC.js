@@ -1,13 +1,11 @@
 import { Outlet } from "react-router-dom";
-import BoardHeader from "./BoardHeader";
-// import DashHeader from './DashHeader'
-// import DashFooter from './DashFooter'
+import Header from "./Header";
 
-const BoardLayout = () => {
+const LayoutC = () => {
     return (
         <>
-            <BoardHeader />
-            <div className={"responsiveWrapper"}>
+            <Header />
+            <div className="responsiveWrapper">
                 <div className="content">
                     <div className="content-panel">
                         <div className="vertical-tabs">
@@ -21,12 +19,13 @@ const BoardLayout = () => {
                             <a href="#">Marketplace</a>
                         </div>
                     </div>
-                    <div className="content-main">soka</div>
+                    <div className="content-main">
+                        <Outlet />
+                    </div>
                 </div>
-                {/* <Outlet /> */}
             </div>
             {/* <DashFooter /> */}
         </>
     );
 };
-export default BoardLayout;
+export default LayoutC;

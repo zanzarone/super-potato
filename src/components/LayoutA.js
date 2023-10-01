@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-
+//# NO Header, solo children
 const Layout = () => {
-  return <Outlet />;
+    return <Outlet />;
 };
 export default Layout;
