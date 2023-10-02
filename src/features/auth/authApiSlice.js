@@ -7,10 +7,11 @@ export const authApiSlice = authApiQuerySlice.injectEndpoints({
     //? POST - login
     login: builder.mutation({
       query: (credentials) => ({
-        url: "/login",
+        url: "/users/login",
         method: "POST",
         body: { ...credentials },
       }),
+      extraOptions: { soka: 1 },
     }),
     //! COMPLETAMENTE FAKE, nel senso che json-server non gestisce refresh token, cosi
     //! faccio una nuova login, per aggiornare il token se scaduro

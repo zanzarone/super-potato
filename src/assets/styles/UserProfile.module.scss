@@ -1,0 +1,59 @@
+.userAvatarRootContainer {
+  width: 100px;
+  height: 100px;
+}
+
+.userAvatarContainer {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+
+  //   align-items: center;
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  border-radius: 8px;
+  border: 3px solid var(--c-border-primary);
+}
+
+.image {
+  padding-top: 20px;
+  height: 100px;
+  width: 100px;
+}
+
+.changeAvatarOverlay {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background-color: #e0e0e0;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.userAvatarContainer:hover {
+  cursor: pointer;
+}
+
+.userAvatarContainer:hover .changeAvatarOverlay {
+  visibility: visible;
+}
+
+// style={{
+//     position: "relative",
+//     display: "flex",
+//     overflow: "hidden",
+//     justifyContent: "center",
+//     alignItems: "flex-start",
+//     width: 70,
+//     height: 70,
+//     borderRadius: 8,
+//     border: "3px solid var(--c-border-primary)",
+//   }}

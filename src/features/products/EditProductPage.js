@@ -11,7 +11,7 @@ const EditProductPage = () => {
   const { productId } = useParams();
   const [updateProduct, { isLoading }] = useUpdateProductMutation();
   const pathname = useLocation().pathname;
-  
+
   const {
     product,
     isLoading: isLoadingProducts,
@@ -58,24 +58,29 @@ const EditProductPage = () => {
   if (isSuccess)
     return (
       <>
-        <SectionHeader navigationComponents={
-        <>
-        <Link
-              to={"/products"}
-              className={`item ${pathname === "/products" ? "active" : ""}`}
-            >
-              <Binoculars size={20} />
-              View all
-            </Link>
-            <Link
-              to={"/products/add"}
-              className={`item ${pathname === "/products/add" ? "active" : ""}`}
-            >
-              <Plus size={20} />
-              Add product
-            </Link>
-        </>
-      }/>
+        <SectionHeader
+          title="Products"
+          navigationComponents={
+            <>
+              <Link
+                to={"/products"}
+                className={`item ${pathname === "/products" ? "active" : ""}`}
+              >
+                <Binoculars size={20} />
+                View all
+              </Link>
+              <Link
+                to={"/products/add"}
+                className={`item ${
+                  pathname === "/products/add" ? "active" : ""
+                }`}
+              >
+                <Plus size={20} />
+                Add product
+              </Link>
+            </>
+          }
+        />
         <div className={`responsiveWrapper ${style.content}`}>
           <Product
             title={`Update product`}

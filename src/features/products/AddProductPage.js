@@ -35,9 +35,11 @@ const AddProductPage = () => {
 
   return (
     <>
-      <SectionHeader navigationComponents={
-        <>
-        <Link
+      <SectionHeader
+        title="Products"
+        navigationComponents={
+          <>
+            <Link
               to={"/products"}
               className={`item ${pathname === "/products" ? "active" : ""}`}
             >
@@ -51,8 +53,9 @@ const AddProductPage = () => {
               <Plus size={20} />
               Add product
             </Link>
-        </>
-      }/>
+          </>
+        }
+      />
       <div className={`responsiveWrapper ${style.content}`}>
         <Product
           title="Add new product"

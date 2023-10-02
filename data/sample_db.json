@@ -148,21 +148,6 @@
       "updatedAt": "2023-09-28T12:30:00Z"
     },
     {
-      "name": "Perplex",
-      "value": 75689,
-      "status": 0,
-      "description": "whippersnapper",
-      "storeId": "Y5bT2w",
-      "platforms": [
-        "iOS"
-      ],
-      "id": 1632804055,
-      "_id": "jI2kL8mR7oP9xO5wI4zL9A0qP8fR",
-      "security": 2,
-      "createdAt": "2023-09-28T10:00:00Z",
-      "updatedAt": "2023-09-28T12:30:00Z"
-    },
-    {
       "name": "Discombobulate",
       "value": 98675,
       "status": 0,
@@ -206,21 +191,6 @@
       "createdAt": "2023-09-29T13:35:41.398Z",
       "security": 1,
       "updatedAt": "2023-09-30T21:08:40.433Z"
-    },
-    {
-      "name": "asdasdas",
-      "value": "34",
-      "status": 0,
-      "description": "asdasdasdas",
-      "store": "dggsdgs",
-      "platforms": [
-        "Mac"
-      ],
-      "id": 1696108297950,
-      "_id": "X3u4WWlCaQBVKlokVMB36",
-      "security": 1,
-      "createdAt": "2023-09-30T21:11:37.950Z",
-      "updatedAt": "2023-09-30T21:11:37.950Z"
     }
   ],
   "versions": []
